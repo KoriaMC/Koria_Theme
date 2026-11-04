@@ -1,0 +1,11 @@
+{
+    "id": "koria",
+    "name": "Koria",
+    "description": "Thème sable et océan pour KoriaMC : navigation flottante, gros boutons en relief, sections animées.",
+    "version": "1.0.0",
+    "url": "https://koriamc.fr",
+    "authors": [
+        "KoriaMC"
+    ],
+    "azuriom_api": "1.2.0"
+}
