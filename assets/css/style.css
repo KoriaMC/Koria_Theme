@@ -629,3 +629,6 @@ body:not(.k-home) { background: linear-gradient(180deg, #c9eefc 0, var(--k-bg) 3
 
 .koria .post-preview img, .koria .card-img-top { object-fit: cover; }
 .koria .content img { border-radius: 10px; }
+
+/* Icône de la monnaie (remplace le nom de la monnaie dans les textes) */
+.koria img.k-money { display: inline-block; height: 1.15em; width: auto; vertical-align: -0.22em; margin: 0 .05em; border-radius: 0; filter: drop-shadow(0 1px 0 rgba(0, 0, 0, .15)); }

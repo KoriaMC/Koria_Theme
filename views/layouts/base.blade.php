@@ -45,7 +45,9 @@
     <style>{!! $k->cssVars() !!}</style>
 </head>
 
-<body class="koria @yield('body-class') @unless($k->on('animations')) k-no-anim @endunless">
+<body class="koria @yield('body-class') @unless($k->on('animations')) k-no-anim @endunless"
+      data-money-name="{{ money_name() }}"
+      data-money-icon="{{ theme_asset('img/coin.png') }}">
 <div id="app" class="flex-shrink-0">
     <header>
         @include('elements.navbar')
