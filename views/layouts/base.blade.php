@@ -42,6 +42,7 @@
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     @stack('styles')
     <link href="{{ theme_asset('css/style.css') }}&t={{ @filemtime(resource_path('themes/koria/assets/css/style.css')) }}" rel="stylesheet">
+    <link href="{{ theme_asset('css/pages.css') }}&t={{ @filemtime(resource_path('themes/koria/assets/css/pages.css')) }}" rel="stylesheet">
     <style>{!! $k->cssVars() !!}</style>
 </head>
 
