@@ -629,3 +629,23 @@ body:not(.k-home) { background: linear-gradient(180deg, #c9eefc 0, var(--k-bg) 3
 
 .koria .post-preview img, .koria .card-img-top { object-fit: cover; }
 .koria .content img { border-radius: 10px; }
+
+/* Icône de la monnaie (remplace le nom de la monnaie dans les textes) */
+.koria img.k-money { display: inline-block; height: 1.15em; width: auto; vertical-align: -0.22em; margin: 0 .05em; border-radius: 0; filter: drop-shadow(0 1px 0 rgba(0, 0, 0, .15)); }
+
+/* Compteurs sous le bouton du launcher */
+.k-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin-top: 1.4rem; }
+.k-stat {
+    display: flex; align-items: center; gap: .7rem; min-width: 200px; padding: .55rem 1.2rem .55rem .6rem; text-align: left;
+    background: linear-gradient(180deg, #fffaf0, #fcefd2); border: 3px solid var(--k-wood-dark); border-radius: 14px;
+    box-shadow: 0 5px 0 var(--k-wood-edge), 0 12px 20px rgba(30, 50, 10, .15);
+}
+.k-stat-icon { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 10px; color: #fff; font-size: 1.2rem; border: 2px solid rgba(0, 0, 0, .2); }
+.k-stat-icon::after { content: ""; position: absolute; top: -5px; right: -5px; width: 11px; height: 11px; border-radius: 50%; border: 2px solid #fff; }
+.k-stat-green { background: linear-gradient(180deg, var(--k-leaf-light), var(--k-leaf-dark)); }
+.k-stat-green::after { background: var(--k-water); }
+.k-stat-blue { background: linear-gradient(180deg, color-mix(in srgb, var(--k-water) 60%, #fff), var(--k-water-2)); }
+.k-stat-blue::after { background: #ffa53a; }
+.k-stat small { display: block; font-size: .68rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--k-wood-deep); }
+.k-stat strong { display: block; font-size: 1.25rem; font-weight: 900; line-height: 1.15; color: var(--k-leaf-dark); }
+.k-stat strong.k-stat-water { color: var(--k-water-2); }

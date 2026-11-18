@@ -27,6 +27,7 @@ return [
     'hero_subtitle' => $text(250),
     'hero_button' => $text(60),
     'hero_show_players' => $bool,
+    'hero_status_text' => $text(40),
     'hero_canopy' => $bool,
 
     // Launcher et liens
