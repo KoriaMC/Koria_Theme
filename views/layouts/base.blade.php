@@ -43,6 +43,7 @@
     @stack('styles')
     <link href="{{ theme_asset('css/style.css') }}&t={{ @filemtime(resource_path('themes/koria/assets/css/style.css')) }}" rel="stylesheet">
     <link href="{{ theme_asset('css/shop.css') }}&t={{ @filemtime(resource_path('themes/koria/assets/css/shop.css')) }}" rel="stylesheet">
+    <link href="{{ theme_asset('css/wiki.css') }}&t={{ @filemtime(resource_path('themes/koria/assets/css/wiki.css')) }}" rel="stylesheet">
     <style>{!! $k->cssVars() !!}</style>
 </head>
 
