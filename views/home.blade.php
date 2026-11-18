@@ -38,10 +38,22 @@
             <a href="{{ $launcherHref }}" class="k-btn k-btn-xl">
                 <i class="bi bi-play-fill"></i> {{ $k->get('hero_button') }}
             </a>
-            @if($k->on('hero_show_players') && $server && $server->isOnline())
-                <span class="k-online">
-                    <span class="k-dot"></span>{{ trans_choice('messages.server.online', $server->getOnlinePlayers()) }}
-                </span>
+            @if($k->on('hero_show_players'))
+                @php($koriaUsers = class_exists(\Azuriom\Models\User::class) ? \Azuriom\Models\User::count() : 0)
+                <div class="k-stats">
+                    <div class="k-stat">
+                        <span class="k-stat-icon k-stat-green"><i class="bi bi-people-fill"></i></span>
+                        <span><small>Joueurs inscrits</small><strong>{{ $koriaUsers }}</strong></span>
+                    </div>
+                    <div class="k-stat">
+                        <span class="k-stat-icon k-stat-blue"><i class="bi bi-controller"></i></span>
+                        @if($server && $server->isOnline())
+                            <span><small>Joueurs en ligne</small><strong>{{ $server->getOnlinePlayers() }}</strong></span>
+                        @else
+                            <span><small>Ouverture du serveur</small><strong class="k-stat-water">{{ $k->get('hero_status_text') }}</strong></span>
+                        @endif
+                    </div>
+                </div>
             @endif
         </div>
 

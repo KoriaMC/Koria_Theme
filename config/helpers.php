@@ -31,6 +31,7 @@ return new class
         'hero_subtitle' => 'Le serveur PvP Faction francophone. Forme ta faction, défends ta base, domine la map.',
         'hero_button' => 'Télécharger le launcher',
         'hero_show_players' => true,
+        'hero_status_text' => 'Bientôt',
         'hero_canopy' => true,
 
         // Launcher et liens

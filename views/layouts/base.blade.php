@@ -42,10 +42,13 @@
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     @stack('styles')
     <link href="{{ theme_asset('css/style.css') }}&t={{ @filemtime(resource_path('themes/koria/assets/css/style.css')) }}" rel="stylesheet">
+    <link href="{{ theme_asset('css/shop.css') }}&t={{ @filemtime(resource_path('themes/koria/assets/css/shop.css')) }}" rel="stylesheet">
     <style>{!! $k->cssVars() !!}</style>
 </head>
 
-<body class="koria @yield('body-class') @unless($k->on('animations')) k-no-anim @endunless">
+<body class="koria @yield('body-class') @unless($k->on('animations')) k-no-anim @endunless"
+      data-money-name="{{ money_name() }}"
+      data-money-icon="{{ theme_asset('img/coin.png') }}">
 <div id="app" class="flex-shrink-0">
     <header>
         @include('elements.navbar')
