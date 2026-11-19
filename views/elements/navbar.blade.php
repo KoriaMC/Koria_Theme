@@ -45,18 +45,23 @@
 
             <ul class="navbar-nav k-actions align-items-lg-center">
                 @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">
-                            <i class="bi bi-box-arrow-in-right"></i> {{ trans('auth.login') }}
+                    <li class="nav-item dropdown">
+                        <a id="guestDropdown" class="k-btn k-btn-gold k-btn-nav dropdown-toggle" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Compte
                         </a>
-                    </li>
-                    @if(Route::has('register'))
-                        <li class="nav-item">
-                            <a class="k-btn k-btn-gold k-btn-nav" href="{{ route('register') }}">
-                                <i class="bi bi-person-plus-fill"></i> {{ trans('auth.register') }}
+
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="guestDropdown">
+                            <a class="dropdown-item" href="{{ route('login') }}">
+                                <i class="bi bi-box-arrow-in-right"></i> {{ trans('auth.login') }}
                             </a>
-                        </li>
-                    @endif
+                            @if(Route::has('register'))
+                                <a class="dropdown-item" href="{{ route('register') }}">
+                                    <i class="bi bi-person-plus-fill"></i> {{ trans('auth.register') }}
+                                </a>
+                            @endif
+                        </div>
+                    </li>
                 @else
                     @include('elements.notifications')
 
