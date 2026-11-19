@@ -268,7 +268,7 @@
                             <a href="{{ $launcherHref }}" class="k-btn k-btn-lg">
                                 <i class="bi bi-download"></i> {{ $k->get('cta_button') }}
                             </a>
-                            @if($discord)
+                            @if($discord && ! $showDiscord)
                                 <a href="{{ $discord }}" class="k-btn k-btn-discord k-btn-lg" target="_blank" rel="noopener noreferrer">
                                     <i class="bi bi-discord"></i> Discord
                                 </a>
