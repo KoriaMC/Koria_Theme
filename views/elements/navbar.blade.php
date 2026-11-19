@@ -50,6 +50,13 @@
                             <i class="bi bi-box-arrow-in-right"></i> {{ trans('auth.login') }}
                         </a>
                     </li>
+                    @if(Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">
+                                <i class="bi bi-person-plus"></i> {{ trans('auth.register') }}
+                            </a>
+                        </li>
+                    @endif
                 @else
                     @include('elements.notifications')
 
