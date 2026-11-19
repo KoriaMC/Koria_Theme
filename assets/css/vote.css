@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Thème KoriaMC — Page Vote
+   ========================================================================== */
+
+/* ---------- Carte des boutons de vote (dans la bannière) ---------- */
+.kv-card {
+    position: relative; margin-top: .4rem; padding: 1.1rem 1.2rem; max-width: 620px;
+    background: linear-gradient(180deg, #fffaf0, #fcefd2); border: 3px solid var(--k-wood-deep); border-radius: 16px;
+    box-shadow: inset 0 3px 0 rgba(138, 84, 38, .12), 0 6px 0 var(--k-wood-deep);
+}
+.kv-card .spinner-parent { display: none; }
+.kv-card.voting .spinner-parent {
+    position: absolute; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center;
+    background: rgba(60, 30, 8, .55); border-radius: 13px;
+}
+.kv-sites { display: flex; flex-wrap: wrap; gap: .8rem; }
+.kv-sites .btn { /* boutons « choix du serveur » créés par le script */
+    font-weight: 800; border-radius: 12px; border: 3px solid var(--k-leaf-deep);
+    background: linear-gradient(180deg, var(--k-leaf-light), var(--k-leaf)); color: #fff;
+}
+.kv-site { position: relative; }
+.kv-site.disabled { filter: grayscale(.75); opacity: .75; pointer-events: none; transform: none; }
+.kv-timer:empty { display: none; }
+.kv-timer {
+    padding: .15rem .55rem; border-radius: 999px; font-size: .8rem; font-weight: 800;
+    background: rgba(23, 50, 77, .35); color: #fff; text-shadow: none;
+}
+.kv-name { display: flex; gap: .7rem; flex-wrap: wrap; }
+.kv-name .form-control {
+    flex: 1 1 200px; border: 3px solid var(--k-wood-dark); border-radius: 12px; font-weight: 700; color: var(--k-wood-deep);
+    background: #fffdf6;
+}
+.kv-login-text { margin: 0 0 .8rem; font-weight: 800; color: var(--k-wood-deep); }
+.kv-empty { margin: 0; font-weight: 700; color: var(--k-wood-dark); }
+.kv-empty i { margin-right: .3rem; }
+
+/* ---------- Étapes « comment ça marche » ---------- */
+.kv-steps {
+    list-style: none; padding: 0; margin: 0 0 2.4rem;
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem;
+}
+.kv-steps li {
+    display: flex; align-items: center; gap: .9rem; padding: 1rem 1.1rem;
+    background: #fffdf6; border: 4px solid #f6e3b8; border-radius: 18px;
+    box-shadow: 0 6px 0 #e2c48e, 0 14px 24px rgba(30, 50, 10, .1);
+}
+.kv-step-icon {
+    flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+    width: 56px; height: 56px; border-radius: 16px; font-size: 1.6rem; color: #fff;
+    background: linear-gradient(180deg, var(--kw-c), var(--kw-d));
+    border: 3px solid #fff; box-shadow: 0 4px 0 var(--kw-edge); transform: rotate(-4deg);
+}
+.kv-steps strong { display: block; font-size: 1.1rem; font-weight: 900; text-transform: uppercase; color: var(--k-forest); }
+.kv-steps span:not(.kv-step-icon) { font-weight: 600; color: var(--k-text-soft); font-size: .95rem; }
+
+/* ---------- Panneaux ---------- */
+.kv-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.8rem; align-items: start; }
+.kv-grid-single { grid-template-columns: 1fr; }
+.kv-panel {
+    padding: 1.6rem 1.5rem; margin-bottom: 1.8rem;
+    background: #fffdf6; border: 4px solid #f6e3b8; border-radius: 20px;
+    box-shadow: 0 8px 0 #e2c48e, 0 20px 30px rgba(30, 50, 10, .12);
+}
+.kv-grid .kv-panel { margin-bottom: 0; }
+.k-page-content h2.kv-title {
+    display: flex; align-items: center; gap: .55rem; margin: 0 0 1.1rem;
+    font-size: 1.5rem; font-weight: 900; text-transform: uppercase; color: var(--k-forest);
+}
+.kv-title i {
+    display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 12px;
+    font-size: 1.25rem; color: #fff; background: linear-gradient(180deg, var(--k-wood-light), var(--k-wood));
+    border: 3px solid var(--k-wood-edge); box-shadow: 0 3px 0 var(--k-wood-deep);
+}
+.kv-sub { margin: -.4rem 0 1.1rem; font-weight: 600; color: var(--k-text-soft); }
+
+/* ---------- Objectif ---------- */
+.kv-progress { height: 26px; border-radius: 999px; border: 3px solid var(--k-wood-deep); background: var(--k-cream); }
+.kv-progress .progress-bar { background-color: var(--k-leaf); }
+.kv-goal-text { margin: .7rem 0 0; text-align: center; font-weight: 800; color: var(--k-wood-deep); }
+
+/* ---------- Classement : podium ---------- */
+.kv-podium { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; align-items: end; }
+.kv-place { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 0; }
+.kv-place-1 { order: 2; } .kv-place-2 { order: 1; } .kv-place-3 { order: 3; }
+.kv-avatar {
+    width: 64px; height: 64px; border-radius: 14px; image-rendering: pixelated;
+    border: 3px solid var(--k-wood-deep); background: var(--k-cream); box-shadow: 0 4px 0 rgba(60, 30, 8, .25);
+}
+.kv-place-1 .kv-avatar { width: 78px; height: 78px; }
+.kv-place-name { margin-top: .45rem; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 900; color: var(--k-forest); }
+.kv-place-votes { font-size: .85rem; font-weight: 700; color: var(--k-text-soft); }
+.kv-block {
+    width: 100%; margin-top: .5rem; display: flex; align-items: flex-start; justify-content: center; padding-top: .45rem;
+    border-radius: 12px 12px 4px 4px; font-size: 1.5rem; font-weight: 900; color: #fff;
+    border: 3px solid var(--kp-edge); background: linear-gradient(180deg, var(--kp-a), var(--kp-b));
+    box-shadow: inset 0 3px 0 rgba(255, 255, 255, .35); text-shadow: 0 2px 0 var(--kp-edge);
+}
+.kv-place-1 .kv-block { --kp-a: #ffe27a; --kp-b: #f2b324; --kp-edge: #a8710c; height: 92px; }
+.kv-place-2 .kv-block { --kp-a: #eef2f6; --kp-b: #b5bfc9; --kp-edge: #6d7884; height: 70px; }
+.kv-place-3 .kv-block { --kp-a: #f6c9a0; --kp-b: #d48b4e; --kp-edge: #8a4f20; height: 54px; }
+
+.kv-list { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-direction: column; gap: .5rem; }
+.kv-list li {
+    display: flex; align-items: center; gap: .7rem; padding: .5rem .8rem;
+    background: var(--k-cream-light); border: 2px solid #ecd6a6; border-radius: 12px; font-weight: 700;
+}
+.kv-rank { min-width: 2.2rem; font-weight: 900; color: var(--k-wood-dark); }
+.kv-avatar-sm { width: 32px; height: 32px; border-radius: 8px; image-rendering: pixelated; border: 2px solid var(--k-wood-dark); }
+.kv-list-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--k-forest); }
+.kv-list-votes { padding: .1rem .6rem; border-radius: 999px; background: var(--k-leaf); color: #fff; font-weight: 900; font-size: .85rem; }
+
+/* ---------- Récompenses ---------- */
+.kv-rewards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+.kv-reward {
+    display: flex; align-items: center; gap: .6rem; padding: .75rem .9rem; min-width: 0;
+    border-radius: 14px; border: 3px solid var(--kw-c); font-weight: 800; color: var(--k-forest);
+    background: linear-gradient(180deg, var(--kw-a), color-mix(in srgb, var(--kw-b) 55%, #fff));
+    box-shadow: 0 4px 0 var(--kw-d); transition: transform .15s ease;
+}
+.kv-reward:hover { transform: translateY(-3px) rotate(-1deg); }
+.kv-reward-img { width: 36px; height: 36px; object-fit: contain; image-rendering: pixelated; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 991.98px) {
+    .kv-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 767.98px) {
+    .kv-card { margin-left: auto; margin-right: auto; text-align: left; }
+    .kv-sites { justify-content: center; }
+    .kv-steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+    .kv-rewards { grid-template-columns: 1fr; }
+}
