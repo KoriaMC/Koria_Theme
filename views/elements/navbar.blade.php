@@ -52,8 +52,8 @@
                     </li>
                     @if(Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">
-                                <i class="bi bi-person-plus"></i> {{ trans('auth.register') }}
+                            <a class="k-btn k-btn-gold k-btn-nav" href="{{ route('register') }}">
+                                <i class="bi bi-person-plus-fill"></i> {{ trans('auth.register') }}
                             </a>
                         </li>
                     @endif

@@ -152,6 +152,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--k-font); font-weight: 800; color: va
 .k-btn-wood { --k-btn-bg: linear-gradient(180deg, var(--k-wood-light), var(--k-wood)); --k-btn-edge: var(--k-wood-edge); --k-btn-color: var(--k-cream-light); --k-btn-shadow: 0 2px 0 rgba(74, 40, 15, .6); }
 .k-btn-cream { --k-btn-bg: linear-gradient(180deg, #fff4dc, var(--k-cream)); --k-btn-edge: var(--k-wood-dark); --k-btn-color: var(--k-wood-deep); --k-btn-shadow: none; }
 .k-btn-discord { --k-btn-bg: linear-gradient(180deg, #9a9efa, var(--k-discord)); --k-btn-edge: var(--k-discord-dark); --k-btn-color: #fff; --k-btn-shadow: 0 2px 0 rgba(40, 40, 120, .5); }
+.k-btn-gold { --k-btn-bg: linear-gradient(180deg, #ffe58a, #f8c23a 55%, #e9a514); --k-btn-edge: #a8710c; --k-btn-color: #5a3606; --k-btn-shadow: 0 1px 0 rgba(255, 245, 200, .7); }
+.k-btn-nav { padding: .55rem 1.05rem; font-size: .92rem; }
 .k-btn.w-100 { white-space: normal; text-align: center; }
 @media (max-width: 575.98px) { .k-btn-lg, .k-btn.w-100 { font-size: .95rem; padding-left: 1rem; padding-right: 1rem; } }
 .k-btn-square { width: 48px; height: 48px; padding: 0; font-size: 1.3rem; }
