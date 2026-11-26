@@ -1,0 +1,9 @@
+{
+    "name": "koriamc/koriaforum",
+    "type": "azuriom-plugin",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\KoriaForum\\": "src/"
+        }
+    }
+}
